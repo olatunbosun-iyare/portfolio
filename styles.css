@@ -1,0 +1,374 @@
+* {
+    box-sizing: border-box;
+  }
+
+
+body{
+    margin: 0;
+    font-family: roboto;
+}
+
+main{
+    /* width: 90%; */
+    margin: 0 auto;
+  
+    /* padding: 2em; */
+}
+
+/* Navigation styles */
+header{
+    background-color: whitesmoke;
+    text-align: center;
+    position:fixed;
+    width:100%;
+    border-bottom: 3px solid #000000;
+    padding: 1em 0;
+}
+
+h2 a{
+    text-decoration: none;
+}
+
+nav{
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background-color: gray;
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li{
+    margin-bottom: 1em;
+    margin-left:1em;
+}
+
+nav a{
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover{
+    color: #000;
+    border: 3px dashed;
+    padding: 5px
+}
+
+.nav-toggle:checked ~ nav{
+    transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+.nav-toggle{
+    display:none;
+}
+
+.nav-toggle-label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span, 
+.nav-toggle-label span::before, 
+.nav-toggle-label span::after{
+    display: block;
+    background-color: black;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before, 
+.nav-toggle-label span::after{
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before{
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after{
+    top: 7px;
+}
+
+header > i{
+    margin: auto;
+    cursor: pointer;
+}
+
+
+/* Sections */
+#about-me{
+    background-color: #F8E8D6;
+    padding: 8em 4em 6em ;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+
+}
+
+#about-me> *:nth-child(1){
+    flex: 1 1 50%;
+}
+
+#about-me> *:nth-child(2){
+    flex: 1 1;
+}
+
+#about-me > img{
+    border-radius: 3%;
+    width: 200px;
+    height: 400px;
+}
+
+#projects{
+    background-color:whitesmoke;
+    padding: 7rem;
+    margin: 0 auto;
+}
+
+.project-img{
+    display:flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 2em;
+}
+
+.project-img > img{
+    border-radius: 5%;
+    width: 250px;
+    height: 150px;
+    flex-shrink: 1;
+}
+
+#skills{
+    background-color:#F8E8D6;
+    padding: 5rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.fa-brands{
+    margin: 1em;
+}
+
+#contact{
+    background-color:#F8E8D6;
+    padding: 5em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Footer */
+footer{
+    background-color:#000000;
+    text-align: center;
+    padding: 3rem;
+}
+
+footer > p{
+    color: white;
+}
+
+
+/* contact Page */
+
+form{
+    width: 640px;
+    margin: 50px auto;
+    max-width: 97%;
+    padding: 55px 30px;
+}
+
+form .title h2{
+    letter-spacing: 6px;
+    border-bottom: 2px solid black;
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-bottom: 32px;
+}
+
+form .half{
+    display: flex;
+    justify-content: space-between;
+}
+
+form .half .item{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    width: 48%;
+}
+
+form label{
+    display: block;
+    font-size: 13px;
+    letter-spacing: 3.5px;
+    margin-bottom: 16px;
+}
+
+form .half .item input{
+    border-radius: 4px;
+    border: 1px solid white;
+    outline: 0;
+    padding: 16px;
+    width: 100%;
+    height: 44px;
+    font-size: 17px;
+}
+
+form .full{
+    margin-bottom: 24px;
+}
+
+form .full textarea{
+    border-radius: 4px;
+    border: 1px solid white;
+    outline: 0;
+    padding: 12px 16px;
+    width: 100%;
+    height: 200px;
+    font-size: 17px;
+}
+
+form .action{
+    margin-bottom: 32px;
+}
+
+form .action input{
+    border-radius: 4px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600px;
+    height: 44px;
+    letter-spacing: 3px;
+    outline: 0;
+    padding: 0 20px 0 22px;
+    margin-right: 10px;
+}
+
+form .action input[type="submit"]{
+    background: black;
+    color: white;
+}
+
+form .icons a{
+    border: 1px solid black;
+    border-radius: 50%;
+    line-height: 36px;
+    text-align: center;
+    font-weight: 600;
+    width: 38px;
+    margin-right: 10px;
+}
+
+form .half .item input:focus, form .full textarea:focus, form .action input[type="reset"]:hover, form .icons a:hover{
+    background:rgba(255, 255, 255, 0.075);
+}
+
+
+/* Media Queries */
+
+@media screen and (min-width: 800px){
+    .nav-toggle-label{
+        display: none;
+    }
+    
+    header{
+        display:grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .logo {
+        grid-column: 2 / 3;
+
+    }
+
+    nav{
+        all: unset;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav ul{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav li{
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1; 
+    }
+
+    nav a::before{
+        content: '';
+        display: block;
+        height: 5px;
+        background: black;
+        position: absolute;
+        top: -.75em;
+        left: 0;
+        right: 0;
+        transform: scale(0,1);
+        transform-origin: right;
+        transition: transform ease-in-out 250ms;
+
+    }
+
+    nav a:hover::before{
+        transform: scale(1, 1);
+    }
+
+}
+
+/* Contact Page */
+@media (max-width: 480px){
+    form .half{
+        flex-direction: column;
+    }
+
+    form .half .item{
+        width: 100%;
+    }
+
+    form .action{
+        display: flex;
+        flex-direction: column;
+    }
+
+    form .action input{
+        margin-bottom: 10px;
+    }
+}
