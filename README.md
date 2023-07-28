@@ -1,2 +1,2 @@
 # portfolio
-This is an experimental portfoliot project. 
+This is an experimental portfolio project. 
